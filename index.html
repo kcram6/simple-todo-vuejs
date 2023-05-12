@@ -5,34 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://ez-css.now.sh">
+    <link rel="stylesheet" href="style.css">
     <title>Todo App</title>
     <style>
-        .done {
-            text-decoration: line-through;
-        }
-        .success {
-            font-size: 16px;
-            background-color: rgba(0, 255, 0, 0.1);
-            padding: 10px;
-            border-radius: 3px;
-            color: green;
-        }
-
-        #delete-all-success {
-            display: none;
-        }
+       
     </style>
       </head>
   <body>
     <main>
         <div id="app">
             <h3>{{ title }}</h3>
+            <p>{{subtitle}}</p>
             <div id="delete-all-success" class="success deleteAll"><p>All todos deleted successfully!</p></div>
             <form @submit.prevent="addTodo">
                 <label for="newTodo">New Todo</label>
                 <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value="">
                 <button type="submit" name="button">Add</button>
             </form>
+            {{newTodo}}
             <ul>
                 <li v-for="todo in todoList">
                     <input type="checkbox" name="" v-model="todo.done">

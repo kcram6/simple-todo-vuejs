@@ -2,12 +2,14 @@ const app = new Vue({
     el: "#app",
     data: {
         title: "Todo List",
+        subtitle: "true",
         newTodo: "",
-        todoList: []
+        todoList: [{
+
+        }]
     },
     methods: {
         addTodo() {
-            console.log(this.newTodo);
             this.todoList.push({
                 title: this.newTodo,
                 done: false
@@ -26,7 +28,11 @@ const app = new Vue({
         },
         deleteAll() {
             this.todoList = [];
-            document.getElementById("delete-all-success").display = "block";
+            document.getElementById("delete-all-success").style.display = "block";
+            setTimeout(() => { 
+                document.getElementById("delete-all-success").style.display = "none";
+            }, 2000);
         }
     }
 });
+

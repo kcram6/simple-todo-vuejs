@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+  }
+
+.done {
+    text-decoration: line-through;
+}
+.success {
+    font-size: 16px;
+    background-color: rgba(0, 255, 0, 0.1);
+    padding: 10px;
+    border-radius: 3px;
+    color: green;
+}
+
+#delete-all-success {
+    display: none;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 2fr 6fr 1fr;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+form button {
+    background-color: rgba(100, 0, 150, 1);
+    color: white;
+    border: 0px;
+    font-size: 16px;
+    height: 100%;
+}
+
+input[type="text"] {
+    border: 1px solid #ddd;
+    font-size: 16px;
+    padding: 10px 10px;
+    margin: 0px;
+}
+
+label {
+    font-size: 16px;
+}
+
+main {
+    background-color: white;
+    padding: 60px 40px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+body {
+    background-color: rgba(0, 200, 255, 0.1);
+}
