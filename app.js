@@ -23,6 +23,10 @@ const app = new Vue({
                 todo.done = true;
                 
             });
+        },
+        deleteAll() {
+            this.todoList = [];
+            document.getElementById("delete-all-success").display = "block";
         }
     }
 });
