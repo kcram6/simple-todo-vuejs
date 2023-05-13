@@ -2,11 +2,8 @@ const app = new Vue({
     el: "#app",
     data: {
         title: "Todo List",
-        subtitle: "true",
         newTodo: "",
-        todoList: [{
-
-        }]
+        todoList: []
     },
     methods: {
         addTodo() {

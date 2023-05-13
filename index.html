@@ -4,34 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://ez-css.now.sh">
     <link rel="stylesheet" href="style.css">
     <title>Todo App</title>
-    <style>
-       
-    </style>
+    <script src="https://kit.fontawesome.com/4d70706659.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
       </head>
   <body>
     <main>
         <div id="app">
-            <h3>{{ title }}</h3>
-            <p>{{subtitle}}</p>
+            <h1>{{ title }}</h1>
+            <div class="btn-container">
+                <button type="button" name="button" @click="allDone"><i class="fa-regular fa-square-check"></i> Mark all Done</button>
+                <button type="button" name="button" @click="deleteAll"><i class="fa-regular fa-trash"></i> Delete All</button>
+            </div>
             <div id="delete-all-success" class="success deleteAll"><p>All todos deleted successfully!</p></div>
             <form @submit.prevent="addTodo">
-                <label for="newTodo">New Todo</label>
-                <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value="">
-                <button type="submit" name="button">Add</button>
+                <!-- <label for="newTodo">New Todo</label> -->
+                <input placeholder="New item" v-model="newTodo" type="text" name="newTodo" id="newTodo" value="">
+                <div style="text-align: right; margin-top: -48px; margin-right: 7px;">
+                    <button type="submit" name="button"><i class="fa-solid fa-plus"></i> Add</button>
+                </div>
             </form>
-            {{newTodo}}
+            <div style=" margin-top: 35px; border-bottom: 1px solid rgba(255, 255, 255, 0.1)"></div>
             <ul>
                 <li v-for="todo in todoList">
-                    <input type="checkbox" name="" v-model="todo.done">
-                    <span :class="{ done: todo.done }">{{todo.title}}</span>
-                    <button @click="removeTodo(todo)" type="button" name="button">Remove</button>
+                    <div>
+                        <input type="checkbox" name="" v-model="todo.done">
+                        <span :class="{ done: todo.done }">{{todo.title}}</span>
+                    </div>
+                    <button @click="removeTodo(todo)" type="button" name="button"><i class="fa-regular fa-trash"></i></button>
                 </li>
             </ul>
-            <button type="button" name="button" @click="allDone">Mark all Done</button>
-            <button type="button" name="button" @click="deleteAll">Delete All</button>
+            
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
